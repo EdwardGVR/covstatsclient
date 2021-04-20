@@ -9,7 +9,7 @@
                 <p>{{content}}</p>
                 <footer class="blockquote-footer">Publicado el: {{publishedDate}}</footer>
                 </blockquote>
-                <a href="#" class="btn btn-primary" v-on:click="editar(postId)">Editar</a>
+                <a href="" class="btn btn-primary" v-on:click="editar(postId)">Editar</a>
             </div>
         </div>
     </div>
@@ -21,6 +21,7 @@ export default {
   methods: {
       editar(postId) {
           console.log(postId)
+          this.$router.push('/editar/' + postId)
       }
   },
   props: {
