@@ -44,4 +44,8 @@ export default {
     .btn {
         margin-top: 40px;
     }
+
+    footer {
+        font-size: 12px ;
+    }
 </style>
