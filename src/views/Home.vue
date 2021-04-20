@@ -1,11 +1,12 @@
 <template>
   <div class="home">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <PostCard 
-      title="Titulo de la nota" 
-      content="Contenido de la nota" 
-      publishedDate="23-423-4-234-324"
-    />
+      <PostCard v-for="post in posts" :key="post.id"
+        :title=post.titulo
+        :content=post.contenido
+        :publishedDate=post.created_at
+        :postId=post.id
+      />
   </div>
 </template>
 
@@ -14,11 +15,27 @@
 // import HelloWorld from '@/components/HelloWorld.vue'
 import PostCard from '@/components/PostCard.vue'
 
+import axios from 'axios'
+
 export default {
   name: 'Home',
   components: {
     // HelloWorld
     PostCard
+  },
+  data: function () {
+    return {
+      posts: null
+    }
+  },
+  mounted: function () {
+    let url = "http://covstatsapi.test/api/posts"
+
+    axios.get(url)
+      .then(response => {
+        console.log(response.data)
+        this.posts = response.data
+      })
   }
 }
 </script>
