@@ -44,7 +44,8 @@ export default {
                 categoria_id: null,
                 contenido: null
             },
-            toastCount: 0
+            toastCount: 0,
+            toastDelay: 3000
         }
     },
     methods:  {
@@ -75,7 +76,7 @@ export default {
             this.$root.$bvToast.toast(text, {
             title: title,
             variant: type,
-            autoHideDelay: 5000,
+            autoHideDelay: this.toastDelay += 2000,
             appendToast: true
             })
         }
