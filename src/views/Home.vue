@@ -1,12 +1,17 @@
 <template>
   <div class="home">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-      <PostCard v-for="post in posts" :key="post.id"
-        :title=post.titulo
-        :content=post.contenido
-        :publishedDate=post.created_at
-        :postId=post.id
-      />
+    
+    <div class="createBtn">
+      <button type="button" class="btn btn-primary" @click="goCreatePost()">Crear nuevo</button>
+    </div>
+
+    <PostCard v-for="post in posts" :key="post.id"
+      :title=post.titulo
+      :content=post.contenido
+      :publishedDate=post.created_at
+      :postId=post.id
+    />
   </div>
 </template>
 
@@ -36,6 +41,20 @@ export default {
         console.log(response.data)
         this.posts = response.data
       })
+  },
+  methods: {
+    goCreatePost () {
+      this.$router.push('/createPost')
+    }
   }
 }
 </script>
+
+<style scoped>
+  .createBtn {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    padding-top: 40px;
+  }
+</style>

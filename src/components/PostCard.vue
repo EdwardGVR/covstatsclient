@@ -9,7 +9,7 @@
                 <p>{{content}}</p>
                 <footer class="blockquote-footer">Publicado el: {{publishedDate}}</footer>
                 </blockquote>
-                <a href="" class="btn btn-primary" v-on:click="editar(postId)">Editar</a>
+                <a href="" class="btn btn-info" v-on:click="editar(postId)">Editar</a>
             </div>
         </div>
     </div>
