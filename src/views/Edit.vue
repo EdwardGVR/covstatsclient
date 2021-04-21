@@ -51,7 +51,9 @@ export default {
                 titulo: "",
                 contenido: "",
                 categoria_id: null
-            }
+            },
+            toastCount: 0,
+            toastDelay: 3000
         }
     },
     methods: {
@@ -63,14 +65,52 @@ export default {
             axios.put(url, this.form)
                 .then(response => {
                     console.log(response)
+                    this.makeToast('Guardado', 'Se aplicaron los cambios', 'success')
                 })
+                .catch(error => {
+                    let errors = error.response.data.errors
+                    // console.log(errors);
+
+                    for (const error in errors) {
+                        this.makeToast('Error', `${errors[error]}`, 'danger')
+                    }
+
+                });
         },
         eliminar () {
             console.log("Eliminando registro");
+
+            let url = 'http://covstatsapi.test/api/posts/' + this.postId
+
+            axios.delete(url)
+                .then(response => {
+                    console.log(response)
+                    this.makeToast('Borrado', 'Se eliminó el registro', 'danger')
+                    this.$router.push('/')
+                })
+                .catch(error => {
+                    let errors = error.response.data.errors
+                    // console.log(errors);
+
+                    for (const error in errors) {
+                        console.log(error);
+                        this.makeToast('Error', 'No se pudo eliminar', 'warning')
+                    }
+
+                });
         },
         home () {
             console.log("Going back");
             this.$router.push('/')
+        },
+        makeToast(title, text, type) {
+            this.toastCount++
+            this.$root.$bvToast.toast(text, {
+            title: title,
+            variant: type,
+            autoHideDelay: this.toastDelay += 2000,
+            appendToast: true
+            })
         }
     },
     mounted: function () {
