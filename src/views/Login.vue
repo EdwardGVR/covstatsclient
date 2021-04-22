@@ -38,11 +38,15 @@ export default {
             axios.post(url, this.form)
                 .then(response => {
                     localStorage.setItem('token', response.data.token)
+                    localStorage.setItem('idUser', response.data.id_user)
+                    
                     this.makeToast('Bienvenido', 'Acceso correcto', 'success')
+                    
                     this.$router.push('/')
                 })
-                .catch(errors => {
-                    console.log(errors.message);
+                .catch(errors => {   
+                    console.log(errors);
+                    
                     this.makeToast('Error', 'Datos incorrectos', 'danger')
                 })
             
@@ -53,10 +57,10 @@ export default {
         makeToast(title, text, type) {
             this.toastCount++
             this.$root.$bvToast.toast(text, {
-            title: title,
-            variant: type,
-            autoHideDelay: this.toastDelay += 2000,
-            appendToast: true
+                title: title,
+                variant: type,
+                autoHideDelay: this.toastDelay += 2000,
+                appendToast: true
             })
         }
     }

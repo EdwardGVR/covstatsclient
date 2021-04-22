@@ -29,10 +29,10 @@
                 <b-nav-item-dropdown v-if="isLoggedIn" right>
                 <!-- Using 'button-content' slot -->
                     <template #button-content>
-                        <em>Nombres Apellidos</em>
+                        <em>{{nombres}} {{apellidos}}</em>
                     </template>
                     <!-- <b-dropdown-item href="#">Profile</b-dropdown-item> -->
-                    <b-dropdown-item @click="logout()" href="#">Cerrar Sesión</b-dropdown-item>
+                    <b-dropdown-item class="ddi" @click="logout()" href="#">Cerrar Sesión</b-dropdown-item>
                 </b-nav-item-dropdown>
 
                 <b-navbar-nav v-else>
@@ -52,7 +52,9 @@ export default {
     name: 'NavbBar',
     data: function () {
         return {
-            isLoggedIn: false
+            isLoggedIn: false,
+            nombres: null,
+            apellidos: null
         }
     },
     methods: {
@@ -66,7 +68,10 @@ export default {
                     'Authorization': `Bearer ${localStorage.getItem('token')}` 
                 }
             })
+            
             localStorage.removeItem('token')
+            localStorage.removeItem('idUser')
+
             this.$router.push('/login')
         },
         login () {
@@ -85,6 +90,15 @@ export default {
     },
     mounted: function () {
         this.setLoggedIn()
+        let idUser = localStorage.getItem('idUser')
+        let url = 'http://covstatsapi.test/api/usuarios/' + idUser
+        
+        axios.get(url)
+            .then(response => {
+                console.log(response);
+                this.nombres = response.data[0].nombres
+                this.apellidos = response.data[0].apellidos
+            })
     }
 }
 </script>
@@ -93,5 +107,13 @@ export default {
     .btn {
         margin-left: 20px;
         margin-bottom: 20px;
+    }
+
+    em {
+        margin-right: 20px;
+    }
+
+    .ddi {
+        background-color: rgb(255, 224, 224);
     }
 </style>
