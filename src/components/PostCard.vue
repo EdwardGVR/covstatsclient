@@ -9,7 +9,7 @@
                 <p>{{content}}</p>
                 <footer class="blockquote-footer">Publicado el: {{publishedDate}}</footer>
                 </blockquote>
-                <a href="" class="btn btn-info" v-on:click="editar(postId)">Editar</a>
+                <a href="" class="btn btn-info" v-on:click="editar(postId)" v-if="isLoggedIn">Editar</a>
             </div>
         </div>
     </div>
@@ -28,7 +28,8 @@ export default {
     title: String,
     content: String,
     publishedDate: String,
-    postId: Number
+    postId: Number,
+    isLoggedIn: Boolean
   }
 }
 </script>

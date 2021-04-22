@@ -60,8 +60,9 @@
                     </option>
                 </select>
             </div>
-            <div class="col-12">
+            <div class="col-12 buttons">
                 <button type="submit" class="btn btn-primary">Registrarse</button>
+                <button @click="login()" class="btn btn-light">Iniciar sesión</button>
             </div>
         </form>
     </div>
@@ -97,6 +98,9 @@ export default {
     methods: {
         regresar () {
             this.$router.push('/')
+        },
+        login () {
+            this.$router.push('/login')
         },
         guardar () {
             this.comparePasswords()
@@ -186,5 +190,10 @@ export default {
     input, select {
         height: 40px;
         margin-bottom: 30px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
     }
 </style>

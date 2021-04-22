@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Edit from '../views/Edit.vue'
 import CreatePost from '../views/CreatePost.vue'
 import RegisterUser from '../views/RegisterUser.vue'
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -24,17 +25,34 @@ const routes = [
   {
     path: '/editar/:idPost',
     name: 'Edit',
-    component: Edit
+    component: Edit,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/createPost',
     name: 'CreatePost',
-    component: CreatePost
+    component: CreatePost,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/registerUser',
     name: 'RegisterUser',
-    component: RegisterUser
+    component: RegisterUser,
+    meta: {
+      requiresGuest: true
+    }
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: {
+      requiresGuest: true
+    }
   }
 ]
 
@@ -42,6 +60,31 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+
+  if (localStorage.getItem('token') !== null) {
+    Vue.prototype.$tokenExists = true
+  } else {
+    Vue.prototype.$tokenExists = false
+  }
+
+  if (to.matched.some(route => route.meta.requiresAuth)) {
+    if (!Vue.prototype.$tokenExists) {
+      next('/login')
+    } else {
+      next()
+    }
+  } else if (to.matched.some(route => route.meta.requiresGuest)) {
+    if (Vue.prototype.$tokenExists) {
+      next('/')
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })
 
 export default router
