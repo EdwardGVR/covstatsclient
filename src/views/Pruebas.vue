@@ -1,0 +1,99 @@
+<template>
+    <div>
+        <Navbar />
+
+        <div class="container">
+            <div class="createBtn">
+                <button type="button" class="btn btn-primary" @click="registerTest()">Registrar nueva prueba</button>
+            </div>
+            
+            <div class="row">
+
+                <div 
+                    v-for="p in pruebas" 
+                    :key="p.id" 
+                    class="card text-dark bg-light mb-3" 
+                    style="max-width: 18rem;"
+                >
+                    <div class="card-header">{{p.resultado_id}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{p.municipio_id}}</h5>
+                        <p class="card-text">{{p.tipo_id}}</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>    
+</template>
+
+<script>
+import Navbar from '@/components/NavBar.vue'
+import axios from 'axios'
+
+export default {
+    name: 'Tests',
+    components: {
+        Navbar
+    },
+    data: function () {
+        return {
+            user_id:null,
+            pruebas: null
+        }
+    }, 
+    methods: {
+        registerTest () {
+            this.$router.push('/registerTest')
+        }
+    },
+    mounted: function () {
+        this.user_id = localStorage.getItem('idUser')
+
+        let url = 'http://covstatsapi.test/api/pruebas/byuser/' + this.user_id
+
+        axios.get(url)
+            .then(response => {
+                this.pruebas = response.data
+            })
+    }
+}
+</script>
+
+<style scoped>
+    .card {
+        text-align: left;
+        margin: 40px auto;
+        width: 50%;
+        padding: 20px;
+    }
+    
+    input, select {
+        height: 40px;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .createBtn {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding-top: 40px;
+    }
+
+    .row {
+        justify-content: space-between;
+        width: 100%;
+        margin: auto;
+        padding: 0;
+    }
+</style>

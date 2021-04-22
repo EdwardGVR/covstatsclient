@@ -84,7 +84,7 @@ export default {
             this.$router.push('/')
         },
         tests () {
-            this.$router.push('/tests')
+            this.$router.push('/pruebas')
         },
         sintomas () {
             this.$router.push('/sintomas')
@@ -104,7 +104,7 @@ export default {
         
         axios.get(url)
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 this.nombres = response.data[0].nombres
                 this.apellidos = response.data[0].apellidos
             })

@@ -5,6 +5,8 @@ import Edit from '../views/Edit.vue'
 import CreatePost from '../views/CreatePost.vue'
 import RegisterUser from '../views/RegisterUser.vue'
 import Login from '../views/Login.vue'
+import Pruebas from '../views/Pruebas.vue'
+import RegisterTest from '../views/RegisterTest.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +36,22 @@ const routes = [
     path: '/createPost',
     name: 'CreatePost',
     component: CreatePost,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/pruebas',
+    name: 'Pruebas',
+    component: Pruebas,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/registerTest',
+    name: 'RegisterTest',
+    component: RegisterTest,
     meta: {
       requiresAuth: true
     }
