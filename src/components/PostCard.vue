@@ -2,7 +2,8 @@
     <div>
         <div class="card">
             <div class="card-header">
-                {{title}}
+                <span class="title">{{title}}</span>
+                <span class="categoria">{{categoria}}</span>
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
@@ -26,6 +27,7 @@ export default {
   },
   props: {
     title: String,
+    categoria: String,
     content: String,
     publishedDate: String,
     postId: Number,
@@ -48,5 +50,19 @@ export default {
 
     footer {
         font-size: 12px ;
+    }
+
+    span {
+        display: block;
+        width: 100%;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .categoria {
+        font-size: 14px;
     }
 </style>

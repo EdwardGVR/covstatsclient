@@ -15,10 +15,10 @@
                     class="card text-dark bg-light mb-3" 
                     style="max-width: 18rem;"
                 >
-                    <div class="card-header">{{p.resultado_id}}</div>
+                    <div class="card-header">{{p.resultado.resultado}}</div>
                     <div class="card-body">
-                        <h5 class="card-title">{{p.municipio_id}}</h5>
-                        <p class="card-text">{{p.tipo_id}}</p>
+                        <h5 class="card-title">{{p.municipio.municipio}}</h5>
+                        <p class="card-text">{{p.tipo.tipo}}</p>
                     </div>
                 </div>
                 
