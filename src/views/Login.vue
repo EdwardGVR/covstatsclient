@@ -1,27 +1,35 @@
 <template>
-    <div class="card">
-        <form @submit.prevent="login()" class="row g-3">
-            <div class="col-md-12">
-                <label for="inputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail" required v-model="form.email">
-            </div>
-            <div class="col-md-12">
-                <label for="inputPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword" required v-model="form.password">
-            </div>
-            <div class="col-12 buttons">
-                <button type="submit" class="btn btn-primary">Entrar</button>
-                <button @click="register()" class="btn btn-light">Registrarse</button>
-            </div>
-        </form>
-    </div>    
+    <div>
+        <Navbar/>
+
+        <div class="card">
+            <form @submit.prevent="login()" class="row g-3">
+                <div class="col-md-12">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" required v-model="form.email">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" required v-model="form.password">
+                </div>
+                <div class="col-12 buttons">
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button @click="register()" class="btn btn-light">Registrarse</button>
+                </div>
+            </form>
+        </div>    
+    </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Navbar from '@/components/NavBar.vue'
 
 export default {
     name: 'Login',
+    components: {
+        Navbar
+    },
     data: function () {
         return {
             form: {

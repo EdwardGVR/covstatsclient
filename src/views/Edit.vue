@@ -1,5 +1,7 @@
 <template>
     <div>
+        <Navbar />
+
         <div class="card">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">T&iacute;tulo</label>
@@ -36,11 +38,12 @@
 <script>
 
 import axios from 'axios'
+import Navbar from '@/components/NavBar.vue'
 
 export default {
     name: 'Edit',
     components: {
-        
+        Navbar
     },
     data: function () {
         return {

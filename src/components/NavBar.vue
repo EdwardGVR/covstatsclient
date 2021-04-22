@@ -1,15 +1,15 @@
 <template>
     <div>
     <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="#">Cliente</b-navbar-brand>
+        <b-navbar-brand href="#" @click="home()">Cliente cov-stats</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
-                <b-nav-item href="#">Posts</b-nav-item>
-                <b-nav-item href="#">Tests</b-nav-item>
-                <b-nav-item href="#">Form</b-nav-item>
+                <b-nav-item href="#" @click="home()">Medidas e informaci&oacute;n</b-nav-item>
+                <b-nav-item href="#" @click="tests()" v-if="isLoggedIn">Pruebas</b-nav-item>
+                <b-nav-item href="#" @click="sintomas()" v-if="isLoggedIn">S&iacute;ntomas</b-nav-item>
             </b-navbar-nav>
 
             <!-- Right aligned nav items -->
@@ -80,6 +80,15 @@ export default {
         register () {
             this.$router.push('/registerUser')
         },
+        home () {
+            this.$router.push('/')
+        },
+        tests () {
+            this.$router.push('/tests')
+        },
+        sintomas () {
+            this.$router.push('/sintomas')
+        },
         setLoggedIn () {
             if (localStorage.getItem('token') !== null) {
                 this.isLoggedIn = true
@@ -105,8 +114,7 @@ export default {
 
 <style scoped>
     .btn {
-        margin-left: 20px;
-        margin-bottom: 20px;
+        margin: 20px 0 20px 20px;
     }
 
     em {
