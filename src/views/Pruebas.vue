@@ -15,10 +15,14 @@
                     class="card text-dark bg-light mb-3" 
                     style="max-width: 18rem;"
                 >
-                    <div class="card-header">{{p.resultado.resultado}}</div>
+                    <div class="card-header">Resultado: {{p.resultado.resultado}}</div>
                     <div class="card-body">
-                        <h5 class="card-title">{{p.municipio.municipio}}</h5>
-                        <p class="card-text">{{p.tipo.tipo}}</p>
+                        <h5 class="card-title">Municipio: {{p.municipio.municipio}}</h5>
+                        <p class="card-text">Tipo: {{p.tipo.tipo}}</p>
+                    </div>
+
+                    <div class="buttons">
+                        <button @click="editTest(p.id)" class="btn btn-secondary">Editar</button>
                     </div>
                 </div>
                 
@@ -46,6 +50,9 @@ export default {
     methods: {
         registerTest () {
             this.$router.push('/registerTest')
+        },
+        editTest (testId) {
+            this.$router.push('/editTest/' + testId)
         }
     },
     mounted: function () {
@@ -64,8 +71,10 @@ export default {
 <style scoped>
     .card {
         text-align: left;
-        margin: 40px auto;
-        width: 50%;
+        /* margin: 40px auto; */
+        margin-top: 40px;
+        margin-left: 20px;
+        width: 300px;
         padding: 20px;
     }
     
