@@ -8,7 +8,8 @@ import Login from '../views/Login.vue'
 import Pruebas from '../views/Pruebas.vue'
 import RegisterTest from '../views/RegisterTest.vue'
 import EditTest from '../views/EditTest.vue'
-import Sintomas from '../views/Sintomas.vue'
+import Autoevaluaciones from '../views/Autoevaluaciones.vue'
+import NewAutoEval from '../views/NewAutoEval.vue'
 
 Vue.use(VueRouter)
 
@@ -67,9 +68,17 @@ const routes = [
     }
   },
   {
-    path: '/sintomas',
-    name: 'Sintomas',
-    component: Sintomas,
+    path: '/autoEvaluaciones',
+    name: 'Autoevaluaciones',
+    component: Autoevaluaciones,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/newAutoEval',
+    name: 'NewAutoEval',
+    component: NewAutoEval,
     meta: {
       requiresAuth: true
     }
