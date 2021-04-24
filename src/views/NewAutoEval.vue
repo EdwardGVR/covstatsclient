@@ -21,7 +21,6 @@
                 </p>
                 <footer class="blockquote-footer">mantenga las medidas de prevención para evitar contagios</footer>
                 </blockquote>
-                <a href="" class="btn btn-info" v-on:click="editar(postId)" v-if="isLoggedIn">Editar</a>
             </div>
         </div>
 
@@ -41,12 +40,20 @@
                     </div>
 
                     <div class="buttons">
-                        <button @click="reportarSintoma()" class="btn btn-secondary">Reportar</button>
+                        <b-form-checkbox switch size="lg" 
+                            class="switch"
+                            @change="toggleInArray(s.id, s.gravedad_id)"
+                            :value=s.id>Reportar</b-form-checkbox
+                        >   
                     </div>
                 </div>
                 
             </div>
+
+            <button v-if="enableSend" type="button" class="btn btn-lg btn-primary">Guardar autoevaluaci&oacute;n</button>
+            <button v-else type="button" class="btn btn-lg btn-secondary" disabled>Seleccione s&iacute;ntomas para poder guardar la autoevaluaci&oacute;n</button>
         </div>
+                    
     </div>    
 </template>
 
@@ -61,11 +68,43 @@ export default {
     },
     data: function () {
         return {
-            sintomas: null
+            sintomas: null,
+            selected: [],
+            enableSend: false
         }
     },
     methods: {
+        toggleInArray (s_id, g_id) {
+            
+            // Store or delete sintoma_id from array selected -- working
+            // if (this.selected.indexOf(s_id) === -1) {
+            //     this.selected.push(s_id)
+            // } else {
+            //     this.selected = this.selected.filter((s) => {
+            //         return s !== s_id
+            //     })
+            // }
 
+            // Store or delete sintoma_id and gravedad_id from array selected -- working
+            if (this.selected.findIndex(s => s.sintoma_id === s_id) === -1) {
+                this.selected.push({
+                    'sintoma_id':s_id,
+                    'gravedad_id':g_id
+                })
+            } else {
+                this.selected = this.selected.filter((s) => {
+                    return s.sintoma_id !== s_id
+                })
+            }
+
+            if (this.selected.length !== 0) {
+                this.enableSend = true
+            } else {
+                this.enableSend = false
+            }
+
+            console.log(this.selected);
+        }
     },
     mounted: function () {
         let url = 'http://covstatsapi.test/api/sintomas'
@@ -103,6 +142,11 @@ export default {
         justify-content: space-between;
     }
 
+    .btn {
+        margin-top: 40px;
+        margin-bottom: 100px;
+    }
+
     .container {
         width: 90%;
     }
@@ -119,5 +163,16 @@ export default {
         width: 100%;
         margin: 50px auto;
         padding: 0;
+    }
+
+    .switch {
+        /* width: 100%; */
+        background: rgb(243, 243, 243);
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+
+    .custom-control-input {
+        margin: 5px;
     }
 </style>
