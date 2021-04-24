@@ -50,7 +50,14 @@
                 
             </div>
 
-            <button v-if="enableSend" type="button" class="btn btn-lg btn-primary">Guardar autoevaluaci&oacute;n</button>
+            <button 
+                v-if="enableSend" 
+                @click="saveEval()" 
+                type="button" 
+                class="btn btn-lg btn-primary"
+            >
+                Guardar autoevaluaci&oacute;n
+            </button>
             <button v-else type="button" class="btn btn-lg btn-secondary" disabled>Seleccione s&iacute;ntomas para poder guardar la autoevaluaci&oacute;n</button>
         </div>
                     
@@ -70,7 +77,11 @@ export default {
         return {
             sintomas: null,
             selected: [],
-            enableSend: false
+            enableSend: false,
+            idEval: null,
+            detalleJson: null,
+            toastCount: 0,
+            toastDelay: 3000
         }
     },
     methods: {
@@ -104,6 +115,66 @@ export default {
             }
 
             console.log(this.selected);
+        },
+        saveEval () {
+            // @TODO            
+            // Guardar un registro en la tabla autoevaluaciones
+            let idUser = localStorage.getItem('idUser')
+
+            let url = 'http://covstatsapi.test/api/autoevaluaciones'
+
+            let body = {
+                usuario_id: idUser
+            }
+            
+            axios.post(url, body)
+                .then(response => {
+                    console.log(response);
+                    
+                    // Obtener el id generado del registro en autoevaluaciones
+
+                    url = 'http://covstatsapi.test/api/autoevaluaciones/mostrecentbyuser/' + idUser
+
+                    axios.get(url)
+                        .then(response => {
+                            console.log(response);
+                            this.idEval = response.data[0].id
+                            // console.log(this.idEval);
+
+                            //Guardar cada sintoma_id del array selected en la tabla detalles_autoevaluacions
+                            url = 'http://covstatsapi.test/api/detallesautoevaluaciones'
+
+                            for (let s in this.selected) {
+                                // console.log(this.selected[s].sintoma_id);
+                                
+                                this.detalleJson = {
+                                    autoevaluacion_id: this.idEval,
+                                    sintoma_id: this.selected[s].sintoma_id
+                                }
+
+                                console.log(this.detalleJson);
+                                
+                                axios.post(url, this.detalleJson)
+                                    .then(response => {
+                                        console.log(response);
+
+                                        this.makeToast('Guardado', response.msg, 'success')
+                                        this.$router.push('/autoEvaluaciones')
+                                    })
+                            }
+                        })
+                })
+
+
+        },
+        makeToast(title, text, type) {
+                this.toastCount++
+                this.$root.$bvToast.toast(text, {
+                title: title,
+                variant: type,
+                autoHideDelay: this.toastDelay += 2000,
+                appendToast: true
+            })
         }
     },
     mounted: function () {
@@ -167,12 +238,8 @@ export default {
 
     .switch {
         /* width: 100%; */
-        background: rgb(243, 243, 243);
+        background: rgb(228, 228, 228);
         border-radius: 5px;
         padding: 5px 10px;
-    }
-
-    .custom-control-input {
-        margin: 5px;
     }
 </style>

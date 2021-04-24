@@ -9,16 +9,21 @@
 
             <div class="row">
 
-                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Titulo</div>
+                <div 
+                    v-for="a in autoevaluaciones"
+                    :key="a.id"
+                    class="card text-dark bg-light mb-3" 
+                    style="max-width: 18rem;"
+                >
+                    <div class="card-header">ID Autoevaluaci&oacute;n: {{a.id}}</div>
                     <div class="card-body">
-                        <h5 class="card-title">Subtitulo</h5>
-                        <p class="card-text">Descripcion</p>
+                        <h5 class="card-title">Fecha de registro</h5>
+                        <p class="card-text">{{a.created_at}}</p>
                     </div>
 
-                    <div class="buttons">
+                    <!-- <div class="buttons">
                         <button @click="editTest(p.id)" class="btn btn-secondary">Editar</button>
-                    </div>
+                    </div> -->
                 </div>
                 
             </div>
@@ -28,7 +33,7 @@
 
 <script>
 import Navbar from '@/components/NavBar.vue'
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
     name: 'Autoevaluaciones',
@@ -37,7 +42,7 @@ export default {
     },
     data: function () {
         return {
-            
+            autoevaluaciones: null
         }
     },
     methods: {
@@ -46,7 +51,14 @@ export default {
         }
     },
     mounted: function () {
-        
+        let idUser = localStorage.getItem('idUser')
+
+        let url = 'http://covstatsapi.test/api/autoevaluaciones/byuser/' + idUser
+
+        axios.get(url)
+            .then(response => {
+                this.autoevaluaciones = response.data                
+            })
     }
 }
 </script>

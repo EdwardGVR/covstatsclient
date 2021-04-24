@@ -78,12 +78,12 @@ export default {
             this.$router.push('/')
         },
         makeToast(title, text, type) {
-            this.toastCount++
-            this.$root.$bvToast.toast(text, {
-            title: title,
-            variant: type,
-            autoHideDelay: this.toastDelay += 2000,
-            appendToast: true
+                this.toastCount++
+                this.$root.$bvToast.toast(text, {
+                title: title,
+                variant: type,
+                autoHideDelay: this.toastDelay += 2000,
+                appendToast: true
             })
         }
     },
