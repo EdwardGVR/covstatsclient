@@ -152,17 +152,17 @@ export default {
                                     sintoma_id: this.selected[s].sintoma_id
                                 }
 
-                                console.log(this.detalleJson);
+                                // console.log(this.detalleJson);
                                 
                                 axios.post(url, this.detalleJson)
                                     .then(response => {
                                         console.log(response);
 
-                                        this.makeToast('Guardado', response.msg, 'success')
                                         this.$router.push('/autoEvaluaciones')
                                     })
                             }
                         })
+                this.makeToast('Guardado', 'Se registró la autoevaluación', 'success')
                 })
 
 

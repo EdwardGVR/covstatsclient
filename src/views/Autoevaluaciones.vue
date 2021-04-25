@@ -15,15 +15,23 @@
                     class="card text-dark bg-light mb-3" 
                     style="max-width: 18rem;"
                 >
+                    
                     <div class="card-header">ID Autoevaluaci&oacute;n: {{a.id}}</div>
                     <div class="card-body">
-                        <h5 class="card-title">Fecha de registro</h5>
-                        <p class="card-text">{{a.created_at}}</p>
+                        <GravedadesCount 
+                            :idEval=a.id
+                        />
+                        
+                        <div class="fecha">
+                            <h5 class="card-title">Fecha de autoevaluaci&oacute;n</h5>
+                            <p class="card-text">{{a.created_at}}</p>
+                        </div>
+
                     </div>
 
-                    <!-- <div class="buttons">
-                        <button @click="editTest(p.id)" class="btn btn-secondary">Editar</button>
-                    </div> -->
+                    <div class="buttons">
+                        <button class="btn btn-info">Detalles</button>
+                    </div>
                 </div>
                 
             </div>
@@ -33,16 +41,19 @@
 
 <script>
 import Navbar from '@/components/NavBar.vue'
+import GravedadesCount from '@/components/GravedadesCount.vue'
 import axios from 'axios'
 
 export default {
     name: 'Autoevaluaciones',
     components: {
-        Navbar
+        Navbar,
+        GravedadesCount
     },
     data: function () {
         return {
-            autoevaluaciones: null
+            autoevaluaciones: null,
+            gravedades: null
         }
     },
     methods: {
@@ -99,5 +110,44 @@ export default {
         width: 100%;
         margin: auto;
         padding: 0;
+    }
+
+    .card-header {
+        background-color: #e9e9e9;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .card-body {
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .card-body .card-title {
+        font-size: 17px;
+    }
+
+    .gravedades, .fecha {
+        padding: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: #f0f0f0;
+    }
+
+    .gravedades .card-text {
+        margin: 0;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .gravedades p {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .fecha p {
+        font-size: 13px;
+        font-style: italic;
     }
 </style>
