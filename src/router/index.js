@@ -10,6 +10,7 @@ import RegisterTest from '../views/RegisterTest.vue'
 import EditTest from '../views/EditTest.vue'
 import Autoevaluaciones from '../views/Autoevaluaciones.vue'
 import NewAutoEval from '../views/NewAutoEval.vue'
+import DetallesAutoEval from '../views/DetallesAutoEval.vue'
 
 Vue.use(VueRouter)
 
@@ -71,6 +72,14 @@ const routes = [
     path: '/autoEvaluaciones',
     name: 'Autoevaluaciones',
     component: Autoevaluaciones,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/detalleAutoEval/:id',
+    name: 'DetalleAutoEval',
+    component: DetallesAutoEval,
     meta: {
       requiresAuth: true
     }

@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="buttons">
-                        <button class="btn btn-info">Detalles</button>
+                        <button class="btn btn-info" @click="detalles(a.id)">Detalles</button>
                     </div>
                 </div>
                 
@@ -59,6 +59,9 @@ export default {
     methods: {
         newAutoEval () {
             this.$router.push('/newAutoEval')
+        },
+        detalles (id) {
+            this.$router.push('/detalleAutoEval/' + id)
         }
     },
     mounted: function () {
