@@ -9,12 +9,13 @@
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
                 <p>
-                    La finalidad de auto evaluación es ayudarlo a tomar decisiones sobre la obtención de atención 
-                    médica adecuada. Este sistema NO se ha diseñado para fines de diagnóstico científico o tratamiento de COVID-19.
+                    La finalidad de esta auto-evaluación es ayudarlo a tomar decisiones sobre la obtención de atención 
+                    médica adecuada. Esta herramienta NO se ha diseñado para fines de diagnóstico científico o tratamiento 
+                    de COVID-19.
                 </p>
                 <p>
                     A continuación se le presentan una serie de síntomas reportados por la Organización Mundial de la Salud en casos de
-                    COVID-19, seleccione cuáles de ellos usted ha experimentado, haciendo clic en el botón reportar que se encuentra 
+                    COVID-19, seleccione cuáles de ellos ha experimentado usted, haciendo clic en el botón reportar que se encuentra 
                     dentro de la tarjeta de cada síntoma.
 
                     Cuando haya finalizado, haga click en el botón guardar auto evaluación.
@@ -238,8 +239,20 @@ export default {
 
     .switch {
         /* width: 100%; */
-        background: rgb(228, 228, 228);
+        background: #e9e9e9;
         border-radius: 5px;
         padding: 5px 10px;
+    }
+
+    .container .card-header {
+        background-color: #e4e4e4;
+    }
+
+    .container .card-body {
+        width: 100%;
+        padding: 10px;
+        margin: 20px auto;
+        background-color: #e9e9e9;
+        border-radius: 5px;
     }
 </style>

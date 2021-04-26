@@ -49,5 +49,9 @@ export default {
 </script>
 
 <style scoped>
-
+    .gravedades .card-text {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #ccc;
+    }
 </style>

@@ -138,6 +138,10 @@ export default {
         background-color: #f0f0f0;
     }
 
+    .fecha {
+        margin-bottom: 20px;
+    }
+
     .gravedades .card-text {
         margin: 0;
         border-bottom: 2px solid #ccc;
