@@ -47,7 +47,8 @@ export default {
                 .then(response => {
                     localStorage.setItem('token', response.data.token)
                     localStorage.setItem('idUser', response.data.id_user)
-                    
+                    localStorage.setItem('rolUser', response.data.id_rol)
+
                     this.makeToast('Bienvenido', 'Acceso correcto', 'success')
                     
                     this.$router.push('/')

@@ -33,7 +33,10 @@ const routes = [
     name: 'Edit',
     component: Edit,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+    },
+    meta: {
+      requiresAdmin: true
     }
   },
   {
@@ -41,7 +44,10 @@ const routes = [
     name: 'CreatePost',
     component: CreatePost,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+    },
+    meta: {
+      requiresAdmin: true
     }
   },
   {
@@ -124,6 +130,12 @@ router.beforeEach((to, from, next) => {
     Vue.prototype.$tokenExists = false
   }
 
+  if (localStorage.getItem('rolUser') !== null && localStorage.getItem('rolUser') == 2) {
+    Vue.prototype.$isAdmin = true
+  } else {
+    Vue.prototype.$isAdmin = false
+  }
+
   if (to.matched.some(route => route.meta.requiresAuth)) {
     if (!Vue.prototype.$tokenExists) {
       next('/login')
@@ -132,6 +144,12 @@ router.beforeEach((to, from, next) => {
     }
   } else if (to.matched.some(route => route.meta.requiresGuest)) {
     if (Vue.prototype.$tokenExists) {
+      next('/')
+    } else {
+      next()
+    }
+  } else if (to.matched.some(route => route.meta.requiresAdmin)) {
+    if (!Vue.prototype.$isAdmin) {
       next('/')
     } else {
       next()

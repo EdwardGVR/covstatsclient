@@ -3,7 +3,7 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <Navbar/>
     
-    <div class="createBtn" v-if="isLoggedIn">
+    <div class="createBtn" v-if="isLoggedIn && isAdmin">
       <button type="button" class="btn btn-primary" @click="goCreatePost()">Crear nuevo</button>
     </div>
 
@@ -14,6 +14,7 @@
       :publishedDate=post.created_at
       :postId=post.id
       :isLoggedIn=isLoggedIn
+      :isAdmin=isAdmin
     />
   </div>
 </template>
@@ -36,13 +37,14 @@ export default {
   data: function () {
     return {
       posts: null,
-      isLoggedIn: false
+      isLoggedIn: false,
+      isAdmin: false
     }
   },
   mounted: function () {
     this.setLoggedIn ()
 
-    console.log(this.isLoggedIn);
+    // console.log(this.isLoggedIn);
     
     let url = "http://covstatsapi.test/api/posts"
 
@@ -57,11 +59,22 @@ export default {
       this.$router.push('/createPost')
     },
     setLoggedIn () {
-        if (localStorage.getItem('token') !== null) {
-            this.isLoggedIn = true
-        } else {
-            this.isLoggedIn = false
-        }
+      if (localStorage.getItem('token') !== null) {
+          this.isLoggedIn = true
+
+          if (localStorage.getItem('rolUser') == 2) {
+            this.isAdmin = true
+          }
+      } else {
+        this.isLoggedIn = false
+      }
+      
+      // this.checkAdmin()
+    },
+    checkAdmin () {
+      if (localStorage.getItem('rolUser') === 2) {
+          this.isAdmin = true
+      }
     }
   }
 }
