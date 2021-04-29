@@ -34,8 +34,6 @@ const routes = [
     component: Edit,
     meta: {
       requiresAuth: true,
-    },
-    meta: {
       requiresAdmin: true
     }
   },
@@ -45,8 +43,6 @@ const routes = [
     component: CreatePost,
     meta: {
       requiresAuth: true,
-    },
-    meta: {
       requiresAdmin: true
     }
   },
@@ -148,14 +144,16 @@ router.beforeEach((to, from, next) => {
     } else {
       next()
     }
-  } else if (to.matched.some(route => route.meta.requiresAdmin)) {
+  } else {
+    next()
+  }
+
+  if (to.matched.some(route => route.meta.requiresAdmin)) {
     if (!Vue.prototype.$isAdmin) {
       next('/')
     } else {
       next()
     }
-  } else {
-    next()
   }
 })
 
