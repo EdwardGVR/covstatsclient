@@ -5,7 +5,7 @@
         <div class="card">
             <form @submit.prevent="login()" class="row g-3">
                 <div class="col-md-12">
-                    <label for="inputEmail" class="form-label">Email</label>
+                    <label for="inputEmail" class="form-label">E-mail</label>
                     <input type="email" class="form-control" id="inputEmail" required v-model="form.email">
                 </div>
                 <div class="col-md-12">
