@@ -63,7 +63,7 @@ export default {
         guardar () {
             console.log("Guardando cambios");
 
-            let url = 'http://covstatsapi.test/api/posts/' + this.postId
+            let url = 'http://covstats.work/api/posts/' + this.postId
 
             axios.put(url, this.form)
                 .then(response => {
@@ -83,7 +83,7 @@ export default {
         eliminar () {
             console.log("Eliminando registro");
 
-            let url = 'http://covstatsapi.test/api/posts/' + this.postId
+            let url = 'http://covstats.work/api/posts/' + this.postId
 
             axios.delete(url)
                 .then(response => {
@@ -120,7 +120,7 @@ export default {
         this.postId = this.$route.params.idPost
         // console.log(this.postId)
 
-        let url = 'http://covstatsapi.test/api/posts/' + this.postId
+        let url = 'http://covstats.work/api/posts/' + this.postId
 
         axios.get(url)
             .then(response => {
@@ -133,7 +133,7 @@ export default {
                 // console.log(this.form)
             })
         
-        url = 'http://covstatsapi.test/api/categorias'
+        url = 'http://covstats.work/api/categorias'
 
         axios.get(url)
             .then(response => {

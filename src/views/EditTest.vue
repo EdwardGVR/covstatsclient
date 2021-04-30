@@ -121,7 +121,7 @@ export default {
         guardar () {
             // console.log(this.form);
 
-            let url = 'http://covstatsapi.test/api/pruebas/' + this.testId
+            let url = 'http://covstats.work/api/pruebas/' + this.testId
 
             axios.put(url, this.form)
                 .then(response => {
@@ -129,7 +129,7 @@ export default {
                 })
         },
         eliminar () {
-            let url = 'http://covstatsapi.test/api/pruebas/' + this.testId
+            let url = 'http://covstats.work/api/pruebas/' + this.testId
 
             axios.delete(url, this.form)
                 .then(response => {
@@ -146,7 +146,7 @@ export default {
             this.municipios = null
             this.isDptoSelected = false
 
-            let url = 'http://covstatsapi.test/api/departamentos/byzona/' + this.zonaId
+            let url = 'http://covstats.work/api/departamentos/byzona/' + this.zonaId
 
             axios.get(url)
                 .then(response => {
@@ -156,7 +156,7 @@ export default {
         activateMncp () {
             this.isDptoSelected = true
 
-            let url = 'http://covstatsapi.test/api/municipios/bydpto/' + this.dptoId
+            let url = 'http://covstats.work/api/municipios/bydpto/' + this.dptoId
 
             axios.get(url)
                 .then(response => {
@@ -176,7 +176,7 @@ export default {
     mounted: function () {
         this.testId = this.$route.params.testId
 
-        let url = 'http://covstatsapi.test/api/pruebas/' + this.testId
+        let url = 'http://covstats.work/api/pruebas/' + this.testId
 
         axios.get(url)
             .then(response => {
@@ -192,7 +192,7 @@ export default {
                 this.selectedDpto = t.departamento_id
                 // this.selectedMncp = t.municipio_id
         
-                url = 'http://covstatsapi.test/api/municipios/' + this.form.municipio_id
+                url = 'http://covstats.work/api/municipios/' + this.form.municipio_id
 
                 axios.get(url)
                     .then(response => {
@@ -205,21 +205,21 @@ export default {
             })
         
 
-        url = 'http://covstatsapi.test/api/zonas'
+        url = 'http://covstats.work/api/zonas'
 
         axios.get(url)
             .then(response => {
                 this.zonas = response.data
             })
 
-        url = 'http://covstatsapi.test/api/tipospruebas'
+        url = 'http://covstats.work/api/tipospruebas'
 
         axios.get(url)
             .then(response => {
                 this.tipos = response.data
             })
 
-        url = 'http://covstatsapi.test/api/resultadospruebas'
+        url = 'http://covstats.work/api/resultadospruebas'
 
         axios.get(url)
             .then(response => {

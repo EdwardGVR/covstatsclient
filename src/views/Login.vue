@@ -41,7 +41,7 @@ export default {
         }
     }, methods: {
         login () {
-            let url = 'http://covstatsapi.test/api/login'
+            let url = 'http://covstats.work/api/login'
 
             axios.post(url, this.form)
                 .then(response => {

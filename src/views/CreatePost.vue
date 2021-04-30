@@ -56,7 +56,7 @@ export default {
     },
     methods:  {
         guardar () {
-            let url = 'http://covstatsapi.test/api/posts'
+            let url = 'http://covstats.work/api/posts'
 
             axios.post(url, this.form)
                 .then(response => {
@@ -88,7 +88,7 @@ export default {
         }
     },
     mounted: function () {
-        let url = 'http://covstatsapi.test/api/categorias'
+        let url = 'http://covstats.work/api/categorias'
 
         axios.get(url)
             .then(response => {

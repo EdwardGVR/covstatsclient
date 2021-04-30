@@ -16,8 +16,34 @@
                             Recomendaci&oacute;n caso grave
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Recomendaci&oacute;n caso grave</h5>
-                            <p class="card-text">Recomendaci&oacute;n caso grave</p>
+                            <h5 class="card-title">Obtenga asistencia m&eacute;dica inmediata</h5>
+                            <p class="card-text">Debe obtener asistencia m&eacute;dica profesiona lo antes posible</p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-danger">
+                        <div class="card-header">
+                            Recomendaci&oacute;n caso grave
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Comunicarse al tel&eacute;fono 132</h5>
+                            <p class="card-text">
+                                De preferencia, para evitar aumento del cansancio, algui&eacute;n m&aacute;s debe llamar 
+                                y reportar la urgencia del caso, seguir las indicaciones que se le brindar&aacute;n.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-danger">
+                        <div class="card-header">
+                            Recomendaci&oacute;n caso grave
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">No realizar  esfuerzo f&iacute;sico</h5>
+                            <p class="card-text">
+                                En esta etapa cualquier esfuerzo por m&iacute;nimo que parezca, puede agravar la fatiga
+                                y dificultad para respirar, por lo que debe permanecer en reposo y en un ambiente bien ventilado.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -28,8 +54,64 @@
                             Recomendaci&oacute;n caso moderado
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Recomendaci&oacute;n caso moderado</h5>
-                            <p class="card-text">Recomendaci&oacute;n caso moderado</p>
+                            <h5 class="card-title">Obtenga orientación médica por vía telefónica</h5>
+                            <p class="card-text">
+                                Puede llamar al tel&eacute;fono 132 del Ministerio de Salud para
+                                reportar sus s&iacute;ntomas y obtener orientaciones de personal m&eacute;dico
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card text-dark bg-warning">
+                        <div class="card-header">
+                            Recomendaci&oacute;n caso moderado
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Vigile niveles de oxigenaci&oacute;n</h5>
+                            <p class="card-text">
+                                Se recomienda tener un ox&iacute;metro en casa para estar pendiente de la oxigenaci&oacute;n
+                                en sangre, se consideran niveles normales valores mayores a 95
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card text-dark bg-warning">
+                        <div class="card-header">
+                            Recomendaci&oacute;n caso moderado
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Realizarse una prueba</h5>
+                            <p class="card-text">
+                                Ante la persistencia de los s&iacute;ntomas presentados, se recomienda realizarse una prueba
+                                de COVID-19, puede optar por la alternativa gratuita del Ministerio de Salud, quienes a trav&eacute;s
+                                de sus redes sociales informan las localidades donde se estar&aacute;n realizando los tamizajes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card text-dark bg-warning">
+                        <div class="card-header">
+                            Recomendaci&oacute;n caso moderado
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Aislamiento</h5>
+                            <p class="card-text">
+                                Como medida de prevenci&oacute;n para evitar la posible propagaci&oacute;n dentro del hogar, se
+                                recomienda tomar medidas como el uso de una habitaci&oacute;n separada, uso de cubiertos y art&iacute;culos
+                                desechables, uso de mascarilla dentro de la casa y mantener bien ventilada la casa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card text-dark bg-warning">
+                        <div class="card-header">
+                            Recomendaci&oacute;n caso moderado
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Estar atento a complicaciones</h5>
+                            <p class="card-text">
+                                Mantenerse vigilante ante cualquier complicaci&oacute;n de los s&iacute;ntomas presentados.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -40,9 +122,29 @@
                             Recomendaci&oacute;n caso leve
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Recomendaci&oacute;n caso leve</h5>
-                            <p class="card-text">Recomendaci&oacute;n caso leve</p>
+                            <h5 class="card-title">Mant&eacute;ngase hidratado</h5>
+                            <p class="card-text">Se recomienda ingerir líquidos en abundancia</p>
                         </div>
+                    </div>
+
+                    <div class="card text-white bg-success">
+                        <div class="card-header">
+                            Recomendaci&oacute;n caso leve
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Vigile sus s&iacute;ntomas</h5>
+                            <p class="card-text">Mantengase alerta ante posibles complicaciones</p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-success">
+                        <div class="card-header">
+                            Recomendaci&oacute;n caso leve
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Siga aplicando las medidas de higiene y distanciamiento</h5>
+                            <p class="card-text">Uso correcto de mascarilla, alcohol gel, distanciamiento social, etc.</p>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -92,7 +194,7 @@ export default {
     mounted: function () {
         this.id = this.$route.params.id
 
-        let url = 'http://covstatsapi.test/api/detallesautoevaluaciones/sintomas/' + this.id
+        let url = 'http://covstats.work/api/detallesautoevaluaciones/sintomas/' + this.id
 
         axios.get(url)
             .then(response => {

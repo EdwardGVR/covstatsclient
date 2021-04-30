@@ -122,7 +122,7 @@ export default {
             // Guardar un registro en la tabla autoevaluaciones
             let idUser = localStorage.getItem('idUser')
 
-            let url = 'http://covstatsapi.test/api/autoevaluaciones'
+            let url = 'http://covstats.work/api/autoevaluaciones'
 
             let body = {
                 usuario_id: idUser
@@ -134,7 +134,7 @@ export default {
                     
                     // Obtener el id generado del registro en autoevaluaciones
 
-                    url = 'http://covstatsapi.test/api/autoevaluaciones/mostrecentbyuser/' + idUser
+                    url = 'http://covstats.work/api/autoevaluaciones/mostrecentbyuser/' + idUser
 
                     axios.get(url)
                         .then(response => {
@@ -143,7 +143,7 @@ export default {
                             // console.log(this.idEval);
 
                             //Guardar cada sintoma_id del array selected en la tabla detalles_autoevaluacions
-                            url = 'http://covstatsapi.test/api/detallesautoevaluaciones'
+                            url = 'http://covstats.work/api/detallesautoevaluaciones'
 
                             for (let s in this.selected) {
                                 // console.log(this.selected[s].sintoma_id);
@@ -181,7 +181,7 @@ export default {
         }
     },
     mounted: function () {
-        let url = 'http://covstatsapi.test/api/sintomas'
+        let url = 'http://covstats.work/api/sintomas'
 
         axios.get(url)
             .then(response => {

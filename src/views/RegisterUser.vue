@@ -114,7 +114,7 @@ export default {
             this.comparePasswords()
 
             if (this.passwordsMatch) {
-                let url = 'http://covstatsapi.test/api/usuarios'
+                let url = 'http://covstats.work/api/usuarios'
 
                 axios.post(url, this.form)
                     .then(response => {
@@ -149,7 +149,7 @@ export default {
             this.municipios = null
             this.isDptoSelected = false
 
-            let url = 'http://covstatsapi.test/api/departamentos/byzona/' + this.zonaId
+            let url = 'http://covstats.work/api/departamentos/byzona/' + this.zonaId
 
             axios.get(url)
                 .then(response => {
@@ -159,7 +159,7 @@ export default {
         activateMncp () {
             this.isDptoSelected = true
 
-            let url = 'http://covstatsapi.test/api/municipios/bydpto/' + this.dptoId
+            let url = 'http://covstats.work/api/municipios/bydpto/' + this.dptoId
 
             axios.get(url)
                 .then(response => {
@@ -177,7 +177,7 @@ export default {
         }
     },
     mounted: function () {
-        let url = 'http://covstatsapi.test/api/zonas'
+        let url = 'http://covstats.work/api/zonas'
 
         axios.get(url)
             .then(response => {
