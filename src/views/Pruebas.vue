@@ -17,8 +17,9 @@
                 >
                     <div class="card-header">Resultado: {{p.resultado.resultado}}</div>
                     <div class="card-body">
-                        <h5 class="card-title">Municipio: {{p.municipio.municipio}}</h5>
-                        <p class="card-text">Tipo: {{p.tipo.tipo}}</p>
+                        <h5 class="card-title">Tipo: {{p.tipo.tipo}}</h5>
+                        <p class="card-text">Departamento: {{p.municipio.departamento.departamento}}</p>
+                        <p class="card-text">Municipio: {{p.municipio.municipio}}</p>
                     </div>
 
                     <div class="buttons">
