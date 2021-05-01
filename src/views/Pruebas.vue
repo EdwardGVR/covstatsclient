@@ -58,7 +58,7 @@ export default {
     mounted: function () {
         this.user_id = localStorage.getItem('idUser')
 
-        let url = 'http://covstats.work/api/pruebas/byuser/' + this.user_id
+        let url = 'https://covstats.work/api/pruebas/byuser/' + this.user_id
 
         axios.get(url)
             .then(response => {

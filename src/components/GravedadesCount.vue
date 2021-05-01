@@ -23,7 +23,7 @@ export default {
         }
     },
     mounted: function () {
-        let url = 'http://covstats.work/api/detallesautoevaluaciones/sintomas/' + this.idEval
+        let url = 'https://covstats.work/api/detallesautoevaluaciones/sintomas/' + this.idEval
 
         axios.get(url)
             .then(response => {

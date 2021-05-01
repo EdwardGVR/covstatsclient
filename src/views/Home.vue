@@ -46,7 +46,7 @@ export default {
 
     // console.log(this.isLoggedIn);
     
-    let url = "http://covstats.work/api/posts"
+    let url = "https://covstats.work/api/posts"
 
     axios.get(url)
       .then(response => {

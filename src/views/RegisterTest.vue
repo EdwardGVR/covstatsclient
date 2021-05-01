@@ -113,7 +113,7 @@ export default {
         guardar () {
             // console.log(this.form);
 
-            let url = 'http://covstats.work/api/pruebas'
+            let url = 'https://covstats.work/api/pruebas'
 
             axios.post(url, this.form)
                 .then(response => {
@@ -133,7 +133,7 @@ export default {
             this.municipios = null
             this.isDptoSelected = false
 
-            let url = 'http://covstats.work/api/departamentos/byzona/' + this.zonaId
+            let url = 'https://covstats.work/api/departamentos/byzona/' + this.zonaId
 
             axios.get(url)
                 .then(response => {
@@ -143,7 +143,7 @@ export default {
         activateMncp () {
             this.isDptoSelected = true
 
-            let url = 'http://covstats.work/api/municipios/bydpto/' + this.dptoId
+            let url = 'https://covstats.work/api/municipios/bydpto/' + this.dptoId
 
             axios.get(url)
                 .then(response => {
@@ -164,21 +164,21 @@ export default {
         // console.log(localStorage.getItem('idUser'));
         this.form.usuario_id = localStorage.getItem('idUser')
 
-        let url = 'http://covstats.work/api/zonas'
+        let url = 'https://covstats.work/api/zonas'
 
         axios.get(url)
             .then(response => {
                 this.zonas = response.data
             })
 
-        url = 'http://covstats.work/api/tipospruebas'
+        url = 'https://covstats.work/api/tipospruebas'
 
         axios.get(url)
             .then(response => {
                 this.tipos = response.data
             })
 
-        url = 'http://covstats.work/api/resultadospruebas'
+        url = 'https://covstats.work/api/resultadospruebas'
 
         axios.get(url)
             .then(response => {
