@@ -1,7 +1,7 @@
 <template>
     <div>
     <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="#" @click="home()">Client cov-stats</b-navbar-brand>
+        <b-navbar-brand href="#" @click="home()">cov-stats</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
