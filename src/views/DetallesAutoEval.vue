@@ -232,6 +232,7 @@ export default {
         width: 90%;
         margin: 50px auto;
         justify-content: space-between;
+        /* flex-wrap: wrap; */
     }
 
     .section {
@@ -239,6 +240,8 @@ export default {
         border-radius: 5px;
         padding: 10px;
         width: 45%;
+        /* flex-grow: 1; */
+        /* margin: 0 10px; */
     }
 
     /* .grave .card {

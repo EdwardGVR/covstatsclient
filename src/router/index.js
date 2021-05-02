@@ -11,6 +11,7 @@ import EditTest from '../views/EditTest.vue'
 import Autoevaluaciones from '../views/Autoevaluaciones.vue'
 import NewAutoEval from '../views/NewAutoEval.vue'
 import DetallesAutoEval from '../views/DetallesAutoEval.vue'
+import Datos from '../views/Datos.vue'
 
 Vue.use(VueRouter)
 
@@ -66,6 +67,14 @@ const routes = [
     path: '/editTest/:testId',
     name: 'EditTest',
     component: EditTest,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/datos',
+    name: 'Datos',
+    component: Datos,
     meta: {
       requiresAuth: true
     }
