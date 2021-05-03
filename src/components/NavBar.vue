@@ -10,6 +10,7 @@
                 <b-nav-item href="#" @click="home()">Medidas e informaci&oacute;n</b-nav-item>
                 <b-nav-item href="#" @click="tests()" v-if="isLoggedIn">Pruebas</b-nav-item>
                 <b-nav-item href="#" @click="autoevaluaciones()" v-if="isLoggedIn">Autoevaluaciones</b-nav-item>
+                <b-nav-item href="#" @click="datos()" v-if="isLoggedIn">Datos</b-nav-item>
             </b-navbar-nav>
 
             <!-- Right aligned nav items -->
@@ -89,6 +90,9 @@ export default {
         },
         autoevaluaciones () {
             this.$router.push('/autoEvaluaciones')
+        },
+        datos () {
+            this.$router.push('/datos')
         },
         setLoggedIn () {
             if (localStorage.getItem('token') !== null) {
