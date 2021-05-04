@@ -1,6 +1,11 @@
 <template>
     <div>
         <div class="wrapper">
+            <div class="title">
+                <hr>
+                Pruebas por zonas
+            </div>
+
             <div class="zona-wrapper">
                 <span>Zona Occidental</span>
                 <Chart 
@@ -188,7 +193,7 @@ export default {
     }
 
     .zona-wrapper {
-        /* height: auto; */
+        min-height: 160px;
         width: 50%;
         margin-bottom: 50px;
         /* border: 2px solid #fff; */
@@ -196,6 +201,23 @@ export default {
 
     .chart div canvas {
         height: 160px;
+    }
+
+    hr {
+        border: none;
+        background: #fff;
+        height: 5px;
+        border-radius: 5px;
+        width: 90%;
+        margin-bottom: 150px;
+    }
+
+    .title {
+        display: block;
+        width: 100%;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 100px;
     }
 
     span {

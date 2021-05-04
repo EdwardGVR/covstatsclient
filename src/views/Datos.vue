@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
     .wrapper {
-        height: auto;
+        /* height: auto; */
         width: 100%;
     }
 </style>
