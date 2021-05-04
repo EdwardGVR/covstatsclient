@@ -193,7 +193,8 @@ export default {
     }
 
     .zona-wrapper {
-        min-height: 160px;
+        min-height: 250px;
+        height: 250px;
         width: 50%;
         margin-bottom: 50px;
         /* border: 2px solid #fff; */
@@ -209,7 +210,7 @@ export default {
         height: 5px;
         border-radius: 5px;
         width: 90%;
-        margin-bottom: 150px;
+        margin-bottom: 100px;
     }
 
     .title {

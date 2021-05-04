@@ -9,6 +9,10 @@
         <div class="wrapper">
             <ZonasPruebas />
         </div>
+
+        <div class="wrapper">
+            <DepartamentosPruebas />
+        </div>
     </div>
 </template>
 
@@ -16,13 +20,15 @@
 import Navbar from '@/components/NavBar.vue'
 import TotalPruebas from '@/components/TotalPruebas.vue'
 import ZonasPruebas from '@/components/ZonasPruebas.vue'
+import DepartamentosPruebas from '@/components/DepartamentosPruebas.vue'
 
 export default {
     name: 'Datos',
     components: {
         Navbar,
         TotalPruebas,
-        ZonasPruebas
+        ZonasPruebas,
+        DepartamentosPruebas
     },
     data() {
         return {
