@@ -1,5 +1,5 @@
 <template>
-  <v-chart ref="chart" class="chart" :option="option" />
+    <v-chart ref="chart" class="chart" :option="option" />
 </template>
 
 <script>
@@ -87,8 +87,8 @@ export default {
 </script>
 
 <style scoped>
-.chart {
-  height: 100vh;
-  width: 100%;
-}
+    .chart {
+        height: 100%;
+        width: 100%;
+    }
 </style>

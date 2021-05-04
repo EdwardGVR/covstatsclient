@@ -1,11 +1,13 @@
 <template>
     <div>
-        <Chart 
-            v-if="loaded"
-            :title=title 
-            :labels=labels
-            :data=chartData
-        />
+        <div class="chart-wrapper">
+            <Chart 
+                v-if="loaded"
+                :title=title 
+                :labels=labels
+                :data=chartData
+            />
+        </div>
     </div>    
 </template>
 
@@ -53,5 +55,10 @@ export default {
 </script>
 
 <style scoped>
-
+    .chart-wrapper {
+        height: 100vh;
+        width: 100%;
+        background: #100c2a;
+        padding-top: 50px;
+    }
 </style>
