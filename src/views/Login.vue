@@ -2,7 +2,7 @@
     <div>
         <Navbar/>
 
-        <div class="card">
+        <div class="card glass">
             <form @submit.prevent="login()" class="row g-3">
                 <div class="col-md-12">
                     <label for="inputEmail" class="form-label">E-mail</label>
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
- .card {
+    .card {
         text-align: left;
         margin: 100px auto;
         width: 50%;
@@ -92,5 +92,37 @@ export default {
     .buttons {
         display: flex;
         justify-content: space-between;
+    }
+
+    label {
+        color: #000;
+        font-weight: bold;
+        text-shadow: 0 0 10px #fff;
+    }
+
+    .glass {
+        width: 30rem;
+        height: 20rem;
+        box-shadow: 1px 1px 10px 0 #000000e0;	
+        border-radius: 5px;
+        position: relative;
+        z-index: 1;
+        background: inherit;
+        overflow: hidden;
+    }
+
+    .glass:before {
+        content: "";
+        position: absolute;
+        /* background: inherit; */
+        background: #ffffffaa;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset 0 0 10000px #ffffff;
+        filter: blur(1px);
+        margin: -20px;
     }
 </style>
