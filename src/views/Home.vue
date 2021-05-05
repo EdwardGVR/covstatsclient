@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <Navbar/>
     
     <div class="createBtn" v-if="isLoggedIn && isAdmin">
@@ -86,5 +85,13 @@ export default {
     justify-content: flex-end;
     width: 90%;
     padding-top: 40px;
+  }
+
+  .particles {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    /* z-index: -1; */
+    position: fixed;
   }
 </style>

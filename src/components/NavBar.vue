@@ -1,6 +1,8 @@
 <template>
     <div>
-    <b-navbar toggleable="lg" type="dark" variant="dark">
+    <Particlebg />
+
+    <b-navbar class="wrapper" toggleable="lg" type="dark" variant="dark">
         <b-navbar-brand href="#" @click="home()">cov-stats</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -13,26 +15,12 @@
                 <b-nav-item href="#" @click="datos()" v-if="isLoggedIn">Datos</b-nav-item>
             </b-navbar-nav>
 
-            <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
-                <!-- <b-nav-form>
-                <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-                <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-                </b-nav-form> -->
-
-                <!-- <b-nav-item-dropdown text="Lang" right>
-                <b-dropdown-item href="#">EN</b-dropdown-item>
-                <b-dropdown-item href="#">ES</b-dropdown-item>
-                <b-dropdown-item href="#">RU</b-dropdown-item>
-                <b-dropdown-item href="#">FA</b-dropdown-item>
-                </b-nav-item-dropdown> -->
 
                 <b-nav-item-dropdown v-if="isLoggedIn" right>
-                <!-- Using 'button-content' slot -->
                     <template #button-content>
                         <em>{{nombres}} {{apellidos}}</em>
                     </template>
-                    <!-- <b-dropdown-item href="#">Profile</b-dropdown-item> -->
                     <b-dropdown-item class="ddi" @click="logout()" href="#">Cerrar Sesión</b-dropdown-item>
                 </b-nav-item-dropdown>
 
@@ -48,9 +36,13 @@
 
 <script>
 import axios from 'axios'
+import Particlebg from '@/components/ParticlesBackground.vue'
 
 export default {
     name: 'NavbBar',
+    components: {
+        Particlebg
+    },
     data: function () {
         return {
             isLoggedIn: false,
@@ -118,6 +110,11 @@ export default {
 </script>
 
 <style scoped>
+    .wrapper {
+        background: #343a40;
+        opacity: 0.9;
+    }
+
     .btn {
         margin: 20px 0 20px 20px;
     }
@@ -127,6 +124,6 @@ export default {
     }
 
     .ddi {
-        background-color: rgb(255, 224, 224);
+        background-color: #ffe0e0;
     }
 </style>
