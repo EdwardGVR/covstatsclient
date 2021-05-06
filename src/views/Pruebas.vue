@@ -14,6 +14,7 @@
                     :key="p.id" 
                     class="card text-dark bg-light mb-3" 
                     style="max-width: 18rem;"
+                    data-aos="fade-up"
                 >
                     <div class="card-header">Resultado: {{p.resultado.resultado}}</div>
                     <div class="card-body">
@@ -73,7 +74,7 @@ export default {
     .card {
         text-align: left;
         /* margin: 40px auto; */
-        margin-top: 40px;
+        margin-top: 50px;
         margin-left: 20px;
         width: 300px;
         padding: 20px;

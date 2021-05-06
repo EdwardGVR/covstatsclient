@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="wrapper">
+        <div data-aos="fade-up" class="wrapper">
             <div class="title">
                 <hr>
                 Pruebas por departamento
             </div>
 
-            <div class="zona-wrapper">
+            <div data-aos="fade-right" class="zona-wrapper">
                 <span>Viendo pruebas del departamento de:</span>
 
                 <div @change="getDptoTest()" class="col-md-12">
@@ -30,7 +30,7 @@
                 />
             </div>
 
-             <div class="zona-wrapper">
+             <div data-aos="fade-left" class="zona-wrapper">
                 <span>Viendo pruebas del municipio de:</span>
 
                 <div @change="getMnpoTest()" class="col-md-12">

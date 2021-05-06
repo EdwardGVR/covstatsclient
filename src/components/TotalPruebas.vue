@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="chart-wrapper">
+        <div data-aos="fade-up" class="chart-wrapper">
             <Chart 
                 v-if="loaded"
                 :title=title 

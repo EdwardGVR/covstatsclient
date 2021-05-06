@@ -14,6 +14,7 @@
                     :key="a.id"
                     class="card text-dark bg-light mb-3" 
                     style="max-width: 18rem;"
+                    data-aos="fade-up"
                 >
                     
                     <div class="card-header">ID Autoevaluaci&oacute;n: {{a.id}}</div>

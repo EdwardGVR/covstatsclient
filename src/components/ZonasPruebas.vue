@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="wrapper">
+        <div data-aos="fade-up" class="wrapper">
             <div class="title">
                 <hr>
                 Pruebas por zonas
             </div>
 
-            <div class="zona-wrapper">
+            <div data-aos="fade-right" class="zona-wrapper">
                 <span>Zona Occidental</span>
                 <Chart 
                     v-if="loaded"
@@ -16,7 +16,7 @@
                 />
             </div>
 
-             <div class="zona-wrapper">
+             <div data-aos="fade-left" class="zona-wrapper">
                 <span>Zona Central</span>
                 <Chart 
                     v-if="loaded"
@@ -26,7 +26,7 @@
                 />
             </div>
 
-            <div class="zona-wrapper">
+            <div data-aos="fade-right" class="zona-wrapper">
                 <span>Zona Paracentral</span>
                 <Chart 
                     v-if="loaded"
@@ -36,7 +36,7 @@
                 />
             </div>
 
-            <div class="zona-wrapper">
+            <div data-aos="fade-left" class="zona-wrapper">
                 <span>Zona Oriental</span>
                 <Chart 
                     v-if="loaded"

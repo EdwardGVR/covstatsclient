@@ -5,6 +5,9 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 import VueParticles from 'vue-particles'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -26,6 +29,11 @@ Vue.use(VueParticles)
 
 
 new Vue({
+
+  created () {
+    AOS.init()
+  },
+
   router,
   render: h => h(App)
 }).$mount('#app')

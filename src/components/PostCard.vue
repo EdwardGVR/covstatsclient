@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="card">
+        <div data-aos="fade-up" class="card">
             <div class="card-header">
                 <span class="title">{{title}}</span>
                 <span class="categoria">{{categoria}}</span>
@@ -45,7 +45,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .card {
-        margin: 50px auto;
+        margin: 100px auto;
         width: 80%;
         text-align: left;
         /* opacity: 0.9; */
@@ -71,7 +71,7 @@ export default {
 
     .title {
         font-weight: bold;
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .categoria {
