@@ -77,6 +77,7 @@ export default {
         margin-left: 20px;
         width: 300px;
         padding: 20px;
+        opacity: 0.9;
     }
     
     input, select {

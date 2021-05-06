@@ -236,12 +236,16 @@ export default {
     }
 
     .section {
-        background: #ededed;
+        background: #edededde;
         border-radius: 5px;
         padding: 10px;
         width: 45%;
         /* flex-grow: 1; */
         /* margin: 0 10px; */
+    }
+
+    h2 {
+        margin-bottom: 40px;
     }
 
     /* .grave .card {

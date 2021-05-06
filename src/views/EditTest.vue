@@ -235,6 +235,7 @@ export default {
         margin: 80px auto;
         width: 50%;
         padding: 20px;
+        background: #ffffffcd;
     }
     
     input, select {

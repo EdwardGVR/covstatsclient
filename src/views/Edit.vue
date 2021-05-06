@@ -151,6 +151,7 @@ export default {
         margin: 40px auto;
         width: 80%;
         padding: 20px;
+        background: #ffffffcd;
     }
 
     button {

@@ -31,7 +31,7 @@ export default {
     width: 100%;
     height: 100vh;
     background: #000;
-    /* z-index: -1; */
+    z-index: -1;
     position: fixed;
   }
 </style>

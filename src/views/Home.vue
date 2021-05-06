@@ -3,7 +3,7 @@
     <Navbar/>
     
     <div class="createBtn" v-if="isLoggedIn && isAdmin">
-      <button type="button" class="btn btn-primary" @click="goCreatePost()">Crear nuevo</button>
+      <button type="button" class="btn btn-primary" @click="goCreatePost()">Crear nueva publicaci&oacute;n</button>
     </div>
 
     <PostCard v-for="post in posts" :key="post.id"

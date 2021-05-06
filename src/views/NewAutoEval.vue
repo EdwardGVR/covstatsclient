@@ -199,11 +199,13 @@ export default {
         margin-left: 20px;
         width: 300px;
         padding: 20px;
+        opacity: 0.92;
     }
 
     .card.title {
         width: 90%;
         margin: 40px auto;
+        background: #ffffffe7;
     }
     
     input, select {
