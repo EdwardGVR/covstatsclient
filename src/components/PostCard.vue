@@ -48,6 +48,12 @@ export default {
         margin: 50px auto;
         width: 80%;
         text-align: left;
+        /* opacity: 0.9; */
+        background: #ffffffe2;
+        box-shadow: inset 0px 0px 10px 5px #000;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
     }
 
     .btn {
