@@ -115,10 +115,9 @@ export default {
                 this.enableSend = false
             }
 
-            console.log(this.selected);
+            // console.log(this.selected);
         },
-        saveEval () {
-            // @TODO            
+        saveEval () {          
             // Guardar un registro en la tabla autoevaluaciones
             let idUser = localStorage.getItem('idUser')
 
