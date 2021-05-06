@@ -126,6 +126,7 @@ export default {
             axios.put(url, this.form)
                 .then(response => {
                     this.makeToast('Hecho', response.data.msg, 'success')
+                    this.$router.push('/pruebas')
                 })
         },
         eliminar () {
@@ -134,6 +135,7 @@ export default {
             axios.delete(url, this.form)
                 .then(response => {
                     this.makeToast('Hecho', response.data.msg, 'danger')
+                    this.$router.push('/pruebas')
                 })
         },
         pruebas () {

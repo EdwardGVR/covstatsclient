@@ -69,6 +69,7 @@ export default {
                 .then(response => {
                     console.log(response)
                     this.makeToast('Guardado', 'Se aplicaron los cambios', 'success')
+                    this.$router.push('/')
                 })
                 .catch(error => {
                     let errors = error.response.data.errors

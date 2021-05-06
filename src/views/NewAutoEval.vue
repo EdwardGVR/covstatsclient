@@ -158,9 +158,6 @@ export default {
                                 axios.post(url, this.detalleJson)
                                     .then(response => {
                                         console.log(response);
-
-                                        // this.$router.push('/autoEvaluaciones')
-
                                         this.$router.push('/detalleAutoEval/' + this.idEval)
                                     })
                             }

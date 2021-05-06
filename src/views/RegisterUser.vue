@@ -120,7 +120,7 @@ export default {
                     .then(response => {
                         console.log(response);
                         this.makeToast('Hecho', 'Usuario registrado con éxito', 'success')
-                        // this.$router.push('/')
+                        this.$router.push('/')
                     })
                     .catch(error => {
                         let errors = error.response.data.errors

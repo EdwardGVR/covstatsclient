@@ -119,9 +119,8 @@ export default {
                 .then(response => {
                     // console.log(response);
                     this.makeToast('Hecho', response.data.msg, 'success')
+                    this.$router.push('/pruebas')
                 })
-            
-            this.$router.push('/pruebas')
         },
         pruebas () {
             this.$router.push('/pruebas')
