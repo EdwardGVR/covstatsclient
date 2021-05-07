@@ -6,7 +6,7 @@
             <form @submit.prevent="guardar()" class="row g-3">
                 <div class="col-md-6">
                     <label for="inputNombres" class="form-label">Nombres</label>
-                    <input type="text" class="form-control" id="inputNombres" placeholder="Apellidos" required v-model="form.nombres">
+                    <input type="text" class="form-control" id="inputNombres" placeholder="Nombres" required v-model="form.nombres">
                 </div>
                 <div class="col-md-6">
                     <label for="inputApellidos" class="form-label">Apellidos</label>
@@ -74,6 +74,7 @@
 
 <script>
 import axios from 'axios'
+import emailjs from 'emailjs-com'
 import Navbar from '@/components/NavBar.vue'
 
 export default {
@@ -120,7 +121,8 @@ export default {
                     .then(response => {
                         console.log(response);
                         this.makeToast('Hecho', 'Usuario registrado con éxito', 'success')
-                        this.$router.push('/')
+                        this.sendEmail()
+                        this.$router.push('/login')
                     })
                     .catch(error => {
                         let errors = error.response.data.errors
@@ -165,6 +167,18 @@ export default {
                 .then(response => {
                     this.municipios = response.data
                 })
+        },
+        sendEmail() {
+            try {
+                emailjs.send('service_m5yt0a7', 'template_qtqrjtr',
+                {
+                    name: this.form.nombres + ' ' + this.form.apellidos,
+                    mail_to: this.form.email
+                }, 
+                'user_V42ANJ1FOISNy5WMjjCwc')
+            } catch(error) {
+                console.log({error})
+            }
         },
         makeToast(title, text, type) {
             this.toastCount++
