@@ -3,7 +3,7 @@
     <Particlebg />
 
     <b-navbar class="wrapper" toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="#" @click="home()">Covstats</b-navbar-brand>
+        <b-navbar-brand href="#" @click="home()">COVSTATS</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
