@@ -34,13 +34,13 @@ export default {
         }
     },
     mounted: function () {
-        let url = "https://covstats.work/api/pruebas/byresultado/1"
+        let url = "http://127.0.0.1:8000/api/pruebas/byresultado/1"
 
         axios.get(url)
             .then(response => {
                 this.chartData.push({value: response.data, name: "Positivas"})
         
-                url = "https://covstats.work/api/pruebas/byresultado/2"
+                url = "http://127.0.0.1:8000/api/pruebas/byresultado/2"
 
                 axios.get(url)
                     .then(response => {

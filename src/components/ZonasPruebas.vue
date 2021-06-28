@@ -81,7 +81,7 @@ export default {
         }
     },
     mounted: function () {
-        let url = "https://covstats.work/api/pruebas/byzona/1"
+        let url = "http://127.0.0.1:8000/api/pruebas/byzona/1"
 
         axios.get(url)
             .then(response => {
@@ -104,7 +104,7 @@ export default {
                     this.occData.push({value: r[1].cantidad, name: "Negativas"})
                 }
             
-            url = "https://covstats.work/api/pruebas/byzona/2"
+            url = "http://127.0.0.1:8000/api/pruebas/byzona/2"
 
             axios.get(url)
                 .then(response => {
@@ -127,7 +127,7 @@ export default {
                         this.cenData.push({value: r[1].cantidad, name: "Negativas"})
                     }
 
-                url = "https://covstats.work/api/pruebas/byzona/3"
+                url = "http://127.0.0.1:8000/api/pruebas/byzona/3"
 
                 axios.get(url)
                     .then(response => {
@@ -150,7 +150,7 @@ export default {
                             this.parData.push({value: r[1].cantidad, name: "Negativas"})
                         }
 
-                    url = "https://covstats.work/api/pruebas/byzona/4"
+                    url = "http://127.0.0.1:8000/api/pruebas/byzona/4"
 
                     axios.get(url)
                         .then(response => {

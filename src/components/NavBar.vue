@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         logout () {
-            let url = 'https://covstats.work/api/logout'
+            let url = 'http://127.0.0.1:8000/api/logout'
 
             axios.post(url, {
                 // body
@@ -97,7 +97,7 @@ export default {
     mounted: function () {
         this.setLoggedIn()
         let idUser = localStorage.getItem('idUser')
-        let url = 'https://covstats.work/api/usuarios/' + idUser
+        let url = 'http://127.0.0.1:8000/api/usuarios/' + idUser
         
         axios.get(url)
             .then(response => {

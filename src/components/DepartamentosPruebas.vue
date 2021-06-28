@@ -95,7 +95,7 @@ export default {
             this.getMunicipios()
             this.mnpoData = []
 
-            let url = "https://covstats.work/api/pruebas/bydepartamento/" + this.dptoId
+            let url = "http://127.0.0.1:8000/api/pruebas/bydepartamento/" + this.dptoId
 
             axios.get(url)
                 .then(response => {
@@ -125,7 +125,7 @@ export default {
             this.loadedMnpo = false
             this.mnpoData = []
 
-            let url = "https://covstats.work/api/pruebas/bymunicipio/" + this.mnpoId
+            let url = "http://127.0.0.1:8000/api/pruebas/bymunicipio/" + this.mnpoId
 
             axios.get(url)
                 .then(response => {
@@ -152,7 +152,7 @@ export default {
         },
 
         getMunicipios () {
-            let url = "https://covstats.work/api/municipios/bydpto/" + this.dptoId
+            let url = "http://127.0.0.1:8000/api/municipios/bydpto/" + this.dptoId
             
             axios.get(url)
                 .then(response => {
@@ -162,7 +162,7 @@ export default {
     },
     mounted: function () {
         // Get departamentos
-        let url = "https://covstats.work/api/departamentos"
+        let url = "http://127.0.0.1:8000/api/departamentos"
 
         axios.get(url)
             .then(response => {

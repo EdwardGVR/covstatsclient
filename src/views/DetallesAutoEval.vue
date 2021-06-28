@@ -194,7 +194,7 @@ export default {
     mounted: function () {
         this.id = this.$route.params.id
 
-        let url = 'https://covstats.work/api/detallesautoevaluaciones/sintomas/' + this.id
+        let url = 'http://127.0.0.1:8000/api/detallesautoevaluaciones/sintomas/' + this.id
 
         axios.get(url)
             .then(response => {

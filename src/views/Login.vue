@@ -41,7 +41,7 @@ export default {
         }
     }, methods: {
         login () {
-            let url = 'https://covstats.work/api/login'
+            let url = 'http://127.0.0.1:8000/api/login'
 
             axios.post(url, this.form)
                 .then(response => {

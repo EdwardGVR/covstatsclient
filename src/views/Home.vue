@@ -59,7 +59,7 @@ export default {
 
     // console.log(this.isLoggedIn);
     
-    let url = "https://covstats.work/api/posts"
+    let url = "http://127.0.0.1:8000/api/posts"
 
     axios.get(url)
       .then(response => {
